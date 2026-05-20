@@ -1,0 +1,15 @@
+[
+    {
+        "id": 1,
+        "offer_id": "1",
+        "user_id": 4,
+        "from": "tunis",
+        "to": "nabeil",
+        "date": "2026-05-21",
+        "time": "15:00",
+        "seats": "1",
+        "phone": "925451231",
+        "status": "accepted",
+        "created_at": "2026-05-12 23:50:34"
+    }
+]
