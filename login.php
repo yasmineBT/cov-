@@ -19,12 +19,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (empty($password)) $errors[] = "Password is required";
     
     if (empty($errors)) {
-        
+        //lir fichier en transforme en php
         $users_file = 'data/users.json';
         if (file_exists($users_file)) {
             $users = json_decode(file_get_contents($users_file), true);
             
-            foreach ($users as $user) {
+            foreach ($users as $user) {//parcourir users verifier donnees
                 if ($user['email'] === $email && $user['password'] === $password) {
                    
                     $_SESSION['user_id'] = $user['id'];
@@ -32,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     $_SESSION['user_email'] = $user['email'];
                     $_SESSION['user_role'] = $user['role'];
                     
-                    header('Location: dashboard.php');
+                    header('Location: dashboard.php');//redirection aprés connexion 
                     exit();
                 }
             }

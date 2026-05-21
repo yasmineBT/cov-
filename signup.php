@@ -7,18 +7,18 @@ if (isset($_SESSION['user_id'])) {
     exit();
 }
 
-// Handle form submission
+//si formulaire envoyée 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $first_name = trim($_POST['first_name']);
+    $first_name = trim($_POST['first_name']); //trim supprime espace inutilenettoiye donnee
     $last_name = trim($_POST['last_name']);
     $email = trim($_POST['email']);
     $phone = trim($_POST['phone']);
     $password = trim($_POST['password']);
     $confirm_password = trim($_POST['confirm_password']);
     
-    // Validation
+    // tableau stocker erreur
     $errors = [];
-    
+    //verifier validation des champs
     if (empty($first_name)) $errors[] = "First name is required";
     if (empty($last_name)) $errors[] = "Last name is required";
     if (empty($email)) $errors[] = "Email is required";
@@ -29,10 +29,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($password !== $confirm_password) $errors[] = "Passwords do not match";
     
     // Check if email already exists
-    $users_file = 'data/users.json';
+    $users_file = 'data/users.json';//stockage users fichier jason
     if (file_exists($users_file)) {
-        $users = json_decode(file_get_contents($users_file), true);
-        foreach ($users as $user) {
+        $users = json_decode(file_get_contents($users_file), true);// lit fichier jason le transfoem en tableau php
+        foreach ($users as $user) { //parcourir utilisateur
             if ($user['email'] === $email) {
                 $errors[] = "Email already exists";
                 break;
@@ -54,11 +54,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             'status' => 'active'
         ];
         
-        $users[] = $new_user;
-        file_put_contents($users_file, json_encode($users, JSON_PRETTY_PRINT));
+        $users[] = $new_user;//ajoute user
+        file_put_contents($users_file, json_encode($users, JSON_PRETTY_PRINT));//transforme php en jason ecrit dans le fichier pour save it
         
         $_SESSION['success'] = "Registration successful! Please login.";
-        header('Location: login.php');
+        header('Location: login.php');//passe page login 
         exit();
     }
 }

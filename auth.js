@@ -1,12 +1,12 @@
-// JavaScript for authentication pages (login.php and signup.php)
+
 
 document.addEventListener('DOMContentLoaded', function() {
     // Login form validation
     const loginForm = document.querySelector('.login-form');
-    if (loginForm) {
+    if (loginForm) {// au moment de soumission il faut verifier
         loginForm.addEventListener('submit', function(e) {
             e.preventDefault();
-            
+            //recuperation donnees
             const email = this.querySelector('input[type="email"]').value;
             const password = this.querySelector('input[type="password"]').value;
             
@@ -26,13 +26,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
             
-            // Show loading state
+            // empeche double clic affiche etet de chargement 
             const submitBtn = this.querySelector('button[type="submit"]');
             const originalText = submitBtn.textContent;
             submitBtn.disabled = true;
             submitBtn.textContent = 'Logging in...';
             
-            // Submit form normally for server-side validation
+            // envoi au serveur php
             setTimeout(() => {
                 this.submit();
             }, 500);
