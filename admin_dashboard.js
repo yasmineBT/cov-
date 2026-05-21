@@ -3,7 +3,6 @@ document.addEventListener('DOMContentLoaded', function() {
     if (typeof Chart !== 'undefined') {
         initializeCharts();
     } else {
-        // Wait for Chart.js to load if it's loaded asynchronously
         setTimeout(function() {
             if (typeof Chart !== 'undefined') {
                 initializeCharts();
@@ -121,7 +120,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }, 300000);
     
     function refreshDashboardData() {
-        // Show loading state
         const loadingIndicator = document.createElement('div');
         loadingIndicator.className = 'refresh-indicator';
         loadingIndicator.textContent = 'Refreshing data...';
@@ -141,13 +139,10 @@ document.addEventListener('DOMContentLoaded', function() {
         fetch('admin_dashboard_api.php')
             .then(response => response.json())
             .then(data => {
-                // Update stat cards
                 updateStatCards(data);
                 
-                // Update charts
                 updateCharts(data);
                 
-                // Remove loading indicator
                 setTimeout(() => {
                     if (loadingIndicator.parentNode) {
                         loadingIndicator.parentNode.removeChild(loadingIndicator);
