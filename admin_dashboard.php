@@ -1,13 +1,11 @@
 <?php
 session_start();
 
-// Check if user is logged in and is admin
 if (!isset($_SESSION['user_id']) || $_SESSION['user_role'] !== 'admin') {
     header('Location: login.php');
     exit();
 }
 
-// Load data
 $users_file = 'data/users.json';
 $offers_file = 'data/offers.json';
 $reservations_file = 'data/reservations.json';
@@ -16,7 +14,6 @@ $users = json_decode(file_get_contents($users_file), true);
 $offers = json_decode(file_get_contents($offers_file), true);
 $reservations = json_decode(file_get_contents($reservations_file), true);
 
-// Get current admin user
 $current_user = null;
 foreach ($users as $user) {
     if ($user['id'] == $_SESSION['user_id']) {
@@ -25,7 +22,6 @@ foreach ($users as $user) {
     }
 }
 
-// Calculate statistics
 $total_users = count($users);
 $total_trips = count($offers);
 $total_reservations = count($reservations);
@@ -33,7 +29,6 @@ $accepted_reservations = count(array_filter($reservations, function($r) { return
 $rejected_reservations = count(array_filter($reservations, function($r) { return $r['status'] === 'rejected'; }));
 $pending_reservations = count(array_filter($reservations, function($r) { return $r['status'] === 'pending'; }));
 
-// Most requested trips
 $trip_requests = [];
 foreach ($reservations as $reservation) {
     $key = $reservation['from'] . ' to ' . $reservation['to'];
@@ -264,7 +259,6 @@ $most_requested = array_slice($trip_requests, 0, 5, true);
 </head>
 <body>
     <div class="dashboard-container">
-        <!-- Sidebar -->
         <aside class="sidebar">
             <div class="sidebar-header">
                 <div class="nav-logo">
@@ -281,9 +275,7 @@ $most_requested = array_slice($trip_requests, 0, 5, true);
             </ul>
         </aside>
 
-        <!-- Main Content -->
         <main class="main-content">
-            <!-- Top Navbar -->
             <div class="top-navbar">
                 <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
                     <div style="font-weight: 600; font-size: 1.2rem; color: var(--primary-color);">Admin Dashboard</div>
@@ -293,7 +285,6 @@ $most_requested = array_slice($trip_requests, 0, 5, true);
                 </div>
             </div>
 
-            <!-- Statistics Cards -->
             <div class="stats-grid">
                 <div class="stat-card">
                     <div class="stat-number"><?php echo $total_users; ?></div>
@@ -313,7 +304,6 @@ $most_requested = array_slice($trip_requests, 0, 5, true);
                 </div>
             </div>
 
-            <!-- Charts -->
             <div class="charts-container" style="grid-template-columns: 1fr 1fr; gap: 20px; max-width: 900px; margin: 0 auto 30px;">
                 <div class="chart-card" style="padding: 20px;">
                     <h3 style="margin-bottom: 15px; font-size: 1.1rem;">Reservation Status</h3>
@@ -329,11 +319,9 @@ $most_requested = array_slice($trip_requests, 0, 5, true);
                 </div>
             </div>
 
-            <!-- Recent Activity -->
             <div class="recent-activity">
                 <h3 style="margin-bottom: 20px; color: var(--primary-color);">Recent Activity</h3>
                 <?php
-                // Get recent activities (last 5)
                 $recent_users = array_slice(array_reverse($users), 0, 2);
                 $recent_offers = array_slice(array_reverse($offers), 0, 2);
                 $recent_reservations = array_slice(array_reverse($reservations), 0, 1);
@@ -372,7 +360,6 @@ $most_requested = array_slice($trip_requests, 0, 5, true);
         </main>
     </div>
 
-    <!-- Hidden data for JavaScript -->
     <div id="acceptedCount" style="display: none;"><?php echo $accepted_reservations; ?></div>
     <div id="rejectedCount" style="display: none;"><?php echo $rejected_reservations; ?></div>
     <div id="pendingCount" style="display: none;"><?php echo $pending_reservations; ?></div>
