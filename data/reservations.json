@@ -1,0 +1,67 @@
+[
+    {
+        "id": 1,
+        "offer_id": "1",
+        "user_id": 4,
+        "from": "tunis",
+        "to": "nabeil",
+        "date": "2026-05-21",
+        "time": "15:00",
+        "seats": "1",
+        "phone": "925451231",
+        "status": "accepted",
+        "created_at": "2026-05-12 23:50:34"
+    },
+    {
+        "id": 2,
+        "offer_id": "1",
+        "user_id": 5,
+        "from": "tunis",
+        "to": "nabeil",
+        "date": "2026-05-21",
+        "time": "15:00",
+        "seats": "2",
+        "phone": "21122121",
+        "status": "pending",
+        "created_at": "2026-05-22 02:11:05"
+    },
+    {
+        "id": 3,
+        "offer_id": "3",
+        "user_id": 5,
+        "from": "zaghouan",
+        "to": "sousse",
+        "date": "2026-05-29",
+        "time": "09:35",
+        "seats": "1",
+        "phone": "21122121",
+        "status": "pending",
+        "created_at": "2026-05-22 02:11:28"
+    },
+    {
+        "id": 4,
+        "offer_id": "3",
+        "user_id": 2,
+        "from": "zaghouan",
+        "to": "sousse",
+        "date": "2026-05-29",
+        "time": "09:35",
+        "seats": "1",
+        "phone": "93953550",
+        "status": "pending",
+        "created_at": "2026-06-09 18:00:53"
+    },
+    {
+        "id": 5,
+        "offer_id": "3",
+        "user_id": 2,
+        "from": "zaghouan",
+        "to": "sousse",
+        "date": "2026-05-29",
+        "time": "09:35",
+        "seats": "2",
+        "phone": "93953550",
+        "status": "pending",
+        "created_at": "2026-06-09 18:01:29"
+    }
+]

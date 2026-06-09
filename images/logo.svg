@@ -1,0 +1,6 @@
+<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100" height="100" fill="#425749" rx="15"/>
+  <text x="50" y="35" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#C23C5a" text-anchor="middle">Co</text>
+  <text x="50" y="65" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#D5A18E" text-anchor="middle">Ride</text>
+  <path d="M20 75 L30 70 L40 75 L50 70 L60 75 L70 70 L80 75" stroke="#DEC3BE" stroke-width="3" fill="none"/>
+</svg>

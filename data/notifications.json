@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "user_id": 2,
+        "titre": "New Coupon Available!",
+        "contenu": "Use coupon code 26120 for 10% discount. Valid until Jun 18, 2026",
+        "date": "2026-06-09 17:46:14",
+        "read": false
+    },
+    {
+        "id": 2,
+        "user_id": 4,
+        "titre": "New Coupon Available!",
+        "contenu": "Use coupon code 26120 for 10% discount. Valid until Jun 18, 2026",
+        "date": "2026-06-09 17:46:14",
+        "read": false
+    },
+    {
+        "id": 3,
+        "user_id": 5,
+        "titre": "New Coupon Available!",
+        "contenu": "Use coupon code 26120 for 10% discount. Valid until Jun 18, 2026",
+        "date": "2026-06-09 17:46:14",
+        "read": false
+    },
+    {
+        "id": 4,
+        "user_id": 6,
+        "titre": "New Coupon Available!",
+        "contenu": "Use coupon code 26120 for 10% discount. Valid until Jun 18, 2026",
+        "date": "2026-06-09 17:46:14",
+        "read": false
+    },
+    {
+        "id": 5,
+        "user_id": 4,
+        "titre": "New Reservation Request",
+        "contenu": "You have a new reservation request for zaghouan to sousse on 2026-05-29",
+        "date": "2026-06-09 18:00:53",
+        "read": false
+    },
+    {
+        "id": 6,
+        "user_id": 4,
+        "titre": "New Reservation Request",
+        "contenu": "You have a new reservation request for zaghouan to sousse on 2026-05-29",
+        "date": "2026-06-09 18:01:29",
+        "read": false
+    }
+]

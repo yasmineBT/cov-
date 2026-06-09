@@ -1,0 +1,41 @@
+[
+    {
+        "id": 1,
+        "user_id": 2,
+        "from": "tunis",
+        "to": "nabeil",
+        "date": "2026-05-21",
+        "time": "15:00",
+        "seats": 4,
+        "price": 6.98,
+        "description": "jj",
+        "phone": "93953550",
+        "created_at": "2026-05-12 23:46:13"
+    },
+    {
+        "id": 3,
+        "user_id": 4,
+        "from": "zaghouan",
+        "to": "sousse",
+        "date": "2026-05-29",
+        "time": "09:35",
+        "seats": 4,
+        "price": 7,
+        "description": "no pets",
+        "phone": "29767798",
+        "created_at": "2026-05-21 22:36:11"
+    },
+    {
+        "id": 3,
+        "user_id": 4,
+        "from": "ariana soghra",
+        "to": "beb aliwa",
+        "date": "2026-06-09",
+        "time": "17:59",
+        "seats": 3,
+        "price": 7,
+        "description": "aaa",
+        "phone": "925451231",
+        "created_at": "2026-06-09 17:59:20"
+    }
+]
